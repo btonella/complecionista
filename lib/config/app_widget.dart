@@ -1,0 +1,38 @@
+import 'package:complecionista/common/colors.dart';
+import 'package:complecionista/common/theme.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+
+// ignore: must_be_immutable
+class AppWidget extends StatelessWidget {
+  String appName;
+  AppWidget(this.appName, {Key? key}) : super(key: key);
+
+  AppColors appColors = getAppColors();
+
+  @override
+  Widget build(BuildContext context) {
+    appColors = getAppColors();
+    return MaterialApp.router(
+      routeInformationParser: Modular.routeInformationParser,
+      routerDelegate: Modular.routerDelegate,
+      title: appName,
+      theme: ThemeData(
+        textTheme: defaultTextTheme.apply(fontFamily: 'Nunito'),
+        primaryColor: appColors.mainColor(),
+        scaffoldBackgroundColor: appColors.white(),
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        disabledColor: appColors.grey(),
+        errorColor: appColors.error(),
+      ),
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [Locale('pt', 'BR')],
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
