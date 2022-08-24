@@ -26,7 +26,7 @@ Widget defaultSideMenu(BuildContext context) {
               margin: const EdgeInsets.only(bottom: 10),
               height: MediaQuery.of(context).size.height * 0.2,
               alignment: Alignment.center,
-              child: Image.asset('assets/icons/logo_G.png', height: 60),
+              child: Image.asset('assets/images/yellow-d20.png', height: 60),
             ),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 10),

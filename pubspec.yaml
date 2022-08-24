@@ -44,39 +44,57 @@ flutter:
   fonts:
     - family: Nunito
       fonts:
-        - asset: assets/fonts/Nunito-ExtraLight.ttf
+        - asset: assets/fonts/nunito/Nunito-ExtraLight.ttf
           weight: 200
-        - asset: assets/fonts/Nunito-ExtraLightItalic.ttf
+        - asset: assets/fonts/nunito/Nunito-ExtraLightItalic.ttf
           weight: 200
           style: italic
-        - asset: assets/fonts/Nunito-Light.ttf
+        - asset: assets/fonts/nunito/Nunito-Light.ttf
           weight: 300
-        - asset: assets/fonts/Nunito-LightItalic.ttf
+        - asset: assets/fonts/nunito/Nunito-LightItalic.ttf
           weight: 300
           style: italic
-        - asset: assets/fonts/Nunito-Regular.ttf
-        - asset: assets/fonts/Nunito-Medium.ttf
+        - asset: assets/fonts/nunito/Nunito-Regular.ttf
+        - asset: assets/fonts/nunito/Nunito-Medium.ttf
           weight: 500
-        - asset: assets/fonts/Nunito-MediumItalic.ttf
+        - asset: assets/fonts/nunito/Nunito-MediumItalic.ttf
           weight: 500
           style: italic
-        - asset: assets/fonts/Nunito-SemiBold.ttf
+        - asset: assets/fonts/nunito/Nunito-SemiBold.ttf
           weight: 600
-        - asset: assets/fonts/Nunito-SemiBoldItalic.ttf
+        - asset: assets/fonts/nunito/Nunito-SemiBoldItalic.ttf
           weight: 600
           style: italic
-        - asset: assets/fonts/Nunito-Bold.ttf
+        - asset: assets/fonts/nunito/Nunito-Bold.ttf
           weight: 700
-        - asset: assets/fonts/Nunito-BoldItalic.ttf
+        - asset: assets/fonts/nunito/Nunito-BoldItalic.ttf
           weight: 700
           style: italic
-        - asset: assets/fonts/Nunito-ExtraBold.ttf
+        - asset: assets/fonts/nunito/Nunito-ExtraBold.ttf
           weight: 800
-        - asset: assets/fonts/Nunito-ExtraBoldItalic.ttf
+        - asset: assets/fonts/nunito/Nunito-ExtraBoldItalic.ttf
           weight: 800
           style: italic
-        - asset: assets/fonts/Nunito-Black.ttf
+        - asset: assets/fonts/nunito/Nunito-Black.ttf
           weight: 900
-        - asset: assets/fonts/Nunito-BlackItalic.ttf
+        - asset: assets/fonts/nunito/Nunito-BlackItalic.ttf
           weight: 900
           style: italic
+
+    - family: HongKong
+      fonts:
+        - asset: assets/fonts/hongkong/NotoSerifHK-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/hongkong/NotoSerifHK-Light.ttf
+          weight: 300
+        - asset: assets/fonts/hongkong/NotoSerifHK-Regular.ttf
+        - asset: assets/fonts/hongkong/NotoSerifHK-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/hongkong/NotoSerifHK-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/hongkong/NotoSerifHK-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/hongkong/NotoSerifHK-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/hongkong/NotoSerifHK-Black.ttf
+          weight: 900

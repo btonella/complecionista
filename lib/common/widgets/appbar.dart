@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:complecionista/common/colors.dart';
+import 'package:complecionista/common/theme.dart';
 import 'package:flutter/material.dart';
 
 BottomNavigationBar defaultNavigationBar(int index, void Function(int)? onTap) {
@@ -52,11 +53,15 @@ AppBar defaultAppBar(BuildContext context,
     iconTheme: IconThemeData(color: appColors.black()),
     elevation: 0,
     title: hasLogo
-        ? Image.asset(
-            'assets/images/logo-white.png',
-            height: 35,
-            alignment: Alignment.center,
+        ? Text(
+            'Complecionista',
+            style: defaultTextTheme.bodyText2?.copyWith(fontSize: 24, fontFamily: 'HongKong'),
           )
+        // Image.asset(
+        //     'assets/images/logo-white.png',
+        //     height: 35,
+        //     alignment: Alignment.center,
+        //   )
         : Text(title ?? ''),
     actions: actions,
     leading: !automaticLead
