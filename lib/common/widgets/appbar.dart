@@ -6,8 +6,6 @@ import 'package:flutter/material.dart';
 BottomNavigationBar defaultNavigationBar(int index, void Function(int)? onTap) {
   AppColors colors = getAppColors();
   return BottomNavigationBar(
-    selectedItemColor: colors.mainColor(),
-    unselectedItemColor: colors.secondColor(),
     currentIndex: index,
     type: BottomNavigationBarType.fixed,
     selectedFontSize: 12,
@@ -47,10 +45,11 @@ BottomNavigationBar defaultNavigationBar(int index, void Function(int)? onTap) {
 
 AppBar defaultAppBar(BuildContext context,
     {String? title, bool hasLogo = false, bool automaticLead = true, bool hasLead = false, Icon? leadIcon, void Function()? leadFunction, List<Widget>? actions}) {
-  AppColors colors = getAppColors();
+  AppColors appColors = getAppColors();
 
   return AppBar(
-    backgroundColor: colors.mainColor(),
+    backgroundColor: appColors.mainColor(),
+    iconTheme: IconThemeData(color: appColors.black()),
     elevation: 0,
     title: hasLogo
         ? Image.asset(

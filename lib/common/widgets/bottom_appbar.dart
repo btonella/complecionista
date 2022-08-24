@@ -61,13 +61,13 @@ Widget _appBarButton(String name, String active, int index, double size, Functio
         children: <Widget>[
           Image.asset(
             'assets/icons/$name.png',
-            color: name == active ? appColors.white() : appColors.grey(),
+            color: name == active ? appColors.black() : appColors.grey(),
             height: 32,
           ),
           Text(
             names[index],
             style: defaultTextTheme.subtitle1?.copyWith(
-              color: name == active ? appColors.white() : appColors.grey(),
+              color: name == active ? appColors.black() : appColors.grey(),
               fontSize: 11,
             ),
           )

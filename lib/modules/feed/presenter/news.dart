@@ -1,11 +1,10 @@
 import 'package:complecionista/common/colors.dart';
 import 'package:complecionista/common/error_models.dart';
-import 'package:complecionista/common/side_menu.dart';
+import 'package:complecionista/common/widgets/side_menu.dart';
 import 'package:complecionista/common/theme.dart';
 import 'package:complecionista/common/widgets/appbar.dart';
 import 'package:complecionista/common/widgets/bottom_appbar.dart';
 import 'package:complecionista/common/widgets/tag.dart';
-import 'package:complecionista/common/widgets/top_bar.dart';
 import 'package:complecionista/modules/feed/presenter/cubit/feed_cubit.dart';
 import 'package:complecionista/modules/feed/presenter/cubit/feed_state.dart';
 import 'package:flutter/material.dart';
@@ -110,7 +109,7 @@ class _NewsPageState extends State<NewsPage> {
                               child: Text(
                                 timeDifference,
                                 style: defaultTextTheme.bodyText1?.copyWith(
-                                  color: Colors.black,
+                                  color: appColors.black(),
                                   fontWeight: FontWeight.w500,
                                   fontSize: 9,
                                 ),
@@ -123,7 +122,7 @@ class _NewsPageState extends State<NewsPage> {
                             child: Container(
                               height: MediaQuery.of(context).size.height * 0.3,
                               decoration: BoxDecoration(
-                                color: Colors.blueAccent[200],
+                                color: appColors.grey(),
                                 borderRadius: const BorderRadius.all(Radius.circular(25)),
                                 image: item.content != null && item.content!.images.isNotEmpty
                                     ? DecorationImage(
@@ -175,7 +174,7 @@ class _NewsPageState extends State<NewsPage> {
                               Container(
                                 width: MediaQuery.of(context).size.width * 0.35,
                                 decoration: BoxDecoration(
-                                  color: Colors.blueAccent[200],
+                                  color: appColors.grey(),
                                   borderRadius: const BorderRadius.all(Radius.circular(25)),
                                   image: item.content != null && item.content!.images.isNotEmpty
                                       ? DecorationImage(
@@ -199,7 +198,7 @@ class _NewsPageState extends State<NewsPage> {
                                         child: Text(
                                           item.title ?? '',
                                           style: defaultTextTheme.bodyText1?.copyWith(
-                                            color: Colors.black,
+                                            color: appColors.white(),
                                             fontWeight: FontWeight.w500,
                                             fontSize: 11,
                                           ),
@@ -220,18 +219,18 @@ class _NewsPageState extends State<NewsPage> {
                                                   }
                                                 },
                                               ).toList()
-                                            : [Container()],
+                                            : [],
                                       ),
                                       Container(
                                         padding: const EdgeInsets.only(top: 5, left: 5),
                                         child: Row(
                                           children: [
-                                            const Icon(Icons.access_time, size: 10),
+                                            Icon(Icons.access_time, size: 10, color: appColors.white()),
                                             const SizedBox(width: 5),
                                             Text(
                                               timeDifference,
                                               style: defaultTextTheme.bodyText1?.copyWith(
-                                                color: Colors.black,
+                                                color: appColors.white(),
                                                 fontWeight: FontWeight.w500,
                                                 fontSize: 9,
                                               ),

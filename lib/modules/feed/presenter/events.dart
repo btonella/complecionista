@@ -1,4 +1,4 @@
-import 'package:complecionista/common/side_menu.dart';
+import 'package:complecionista/common/widgets/side_menu.dart';
 import 'package:complecionista/common/widgets/appbar.dart';
 import 'package:flutter/material.dart';
 

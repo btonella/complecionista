@@ -1,11 +1,10 @@
 import 'package:complecionista/common/colors.dart';
 import 'package:complecionista/common/error_models.dart';
-import 'package:complecionista/common/side_menu.dart';
+import 'package:complecionista/common/widgets/side_menu.dart';
 import 'package:complecionista/common/theme.dart';
 import 'package:complecionista/common/widgets/appbar.dart';
 import 'package:complecionista/common/widgets/bottom_appbar.dart';
 import 'package:complecionista/common/widgets/tag.dart';
-import 'package:complecionista/common/widgets/top_bar.dart';
 import 'package:complecionista/modules/feed/presenter/cubit/feed_cubit.dart';
 import 'package:complecionista/modules/feed/presenter/cubit/feed_state.dart';
 import 'package:flutter/material.dart';
@@ -52,7 +51,7 @@ class _PodcastPageState extends State<PodcastPage> {
         builder: (BuildContext context, FeedState state) {
           if (state is FeedLoadingState) {
             return Center(
-              child: CircularProgressIndicator(backgroundColor: appColors.mainColor()),
+              child: CircularProgressIndicator(color: appColors.mainColor()),
             );
           }
 
@@ -116,7 +115,7 @@ class _PodcastPageState extends State<PodcastPage> {
                                 child: Container(
                                   height: MediaQuery.of(context).size.height * 0.3,
                                   decoration: BoxDecoration(
-                                    color: Colors.blueAccent[200],
+                                    color: appColors.grey(),
                                     borderRadius: const BorderRadius.all(Radius.circular(25)),
                                     image: item.content != null && item.content!.images.isNotEmpty
                                         ? DecorationImage(
@@ -165,7 +164,7 @@ class _PodcastPageState extends State<PodcastPage> {
                                   Container(
                                     width: MediaQuery.of(context).size.width * 0.35,
                                     decoration: BoxDecoration(
-                                      color: Colors.blueAccent[200],
+                                      color: appColors.grey(),
                                       borderRadius: const BorderRadius.all(
                                         Radius.circular(25),
                                       ),

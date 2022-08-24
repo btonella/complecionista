@@ -23,6 +23,7 @@ class AppColors {
   grey() => Color(0xFF3F3F3F);
   darkGrey() => Color(0xFF303030);
   white() => Colors.white;
+  black() => Colors.black;
   background() => Color(0xFFFCFCFC);
   backgroundOpposite() => Colors.black;
   error() => Colors.red;

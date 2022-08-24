@@ -8,6 +8,7 @@ import 'package:complecionista/modules/feed/presenter/shop.dart';
 import 'package:flutter/material.dart';
 
 Widget defaultSideMenu(BuildContext context) {
+  AppColors appColors = getAppColors();
   return SizedBox(
     width: MediaQuery.of(context).size.width * 0.55,
     child: ClipRRect(
@@ -16,6 +17,7 @@ Widget defaultSideMenu(BuildContext context) {
         bottomRight: Radius.circular(25),
       ),
       child: Drawer(
+        backgroundColor: appColors.mainColor(),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -24,7 +26,7 @@ Widget defaultSideMenu(BuildContext context) {
               margin: const EdgeInsets.only(bottom: 10),
               height: MediaQuery.of(context).size.height * 0.2,
               alignment: Alignment.center,
-              child: Image.asset('assets/images/logo_G.png', height: 60),
+              child: Image.asset('assets/icons/logo_G.png', height: 60),
             ),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 10),
@@ -91,19 +93,19 @@ Widget defaultSideMenu(BuildContext context) {
                     height: 20,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      border: Border.all(color: AppColors().grey()),
+                      border: Border.all(color: appColors.grey()),
                     ),
                     child: Icon(
                       Icons.person_outline,
                       size: 18,
-                      color: AppColors().grey(),
+                      color: appColors.grey(),
                     ),
                   ),
                   const Spacer(),
                   Icon(
                     Icons.settings_outlined,
                     size: 20,
-                    color: AppColors().grey(),
+                    color: appColors.grey(),
                   ),
                 ],
               ),
@@ -116,6 +118,7 @@ Widget defaultSideMenu(BuildContext context) {
 }
 
 Widget sideMenuIcon(BuildContext context, {required String name, required String icon, required void Function()? onTap, bool isLast = false}) {
+  AppColors appColors = getAppColors();
   return Container(
     padding: const EdgeInsets.all(10),
     child: Column(
@@ -133,7 +136,7 @@ Widget sideMenuIcon(BuildContext context, {required String name, required String
               ),
               Text(
                 name,
-                style: Theme.of(context).textTheme.bodyText2?.copyWith(fontSize: 16, color: AppColors().grey()),
+                style: Theme.of(context).textTheme.bodyText2?.copyWith(fontSize: 16, color: appColors.black()),
               ),
             ],
           ),
@@ -142,7 +145,7 @@ Widget sideMenuIcon(BuildContext context, {required String name, required String
           padding: const EdgeInsets.symmetric(horizontal: 10),
           child: Divider(
             height: 1,
-            color: AppColors().grey().withOpacity(0.3),
+            color: appColors.grey().withOpacity(0.3),
           ),
         )
       ],

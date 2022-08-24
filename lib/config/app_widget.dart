@@ -21,7 +21,9 @@ class AppWidget extends StatelessWidget {
       theme: ThemeData(
         textTheme: defaultTextTheme.apply(fontFamily: 'Nunito'),
         primaryColor: appColors.mainColor(),
-        scaffoldBackgroundColor: appColors.white(),
+        scaffoldBackgroundColor: appColors.black(),
+        iconTheme: IconThemeData(color: appColors.black()),
+        primaryIconTheme: IconThemeData(color: appColors.black()),
         visualDensity: VisualDensity.adaptivePlatformDensity,
         disabledColor: appColors.grey(),
         errorColor: appColors.error(),
