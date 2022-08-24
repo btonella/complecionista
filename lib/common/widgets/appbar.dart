@@ -57,12 +57,10 @@ AppBar defaultAppBar(BuildContext context,
             'Complecionista',
             style: defaultTextTheme.bodyText2?.copyWith(fontSize: 24, fontFamily: 'HongKong'),
           )
-        // Image.asset(
-        //     'assets/images/logo-white.png',
-        //     height: 35,
-        //     alignment: Alignment.center,
-        //   )
-        : Text(title ?? ''),
+        : Text(
+            title ?? '',
+            style: defaultTextTheme.bodyText2,
+          ),
     actions: actions,
     leading: !automaticLead
         ? Container()
