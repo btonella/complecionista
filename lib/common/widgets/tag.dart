@@ -1,6 +1,8 @@
 import 'package:complecionista/common/colors.dart';
+import 'package:complecionista/common/constants.dart';
 import 'package:complecionista/common/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:webfeed/webfeed.dart';
 
 Widget getTag(String title, {bool hasTopMargin = true}) {
   AppColors appColors = getAppColors();
@@ -17,4 +19,21 @@ Widget getTag(String title, {bool hasTopMargin = true}) {
       ),
     ),
   );
+}
+
+List<Widget> buildTags(RssItem item) {
+  return item.categories != null
+      ? item.categories!.map(
+          (e) {
+            if (!ignoreCategories.contains(e.value.toUpperCase())) {
+              return Container(
+                margin: const EdgeInsets.only(left: 5),
+                child: getTag(e.value),
+              );
+            } else {
+              return Container();
+            }
+          },
+        ).toList()
+      : [];
 }

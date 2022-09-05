@@ -1,4 +1,4 @@
-import 'package:complecionista/common/constants.dart';
+import 'package:complecionista/common/urls_api.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 class AppFlavor {

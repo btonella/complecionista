@@ -85,23 +85,11 @@ class _NewsPageState extends State<NewsPage> {
                                 : '${DateTime.now().difference(pubDate).inHours.toString().replaceAll('-', '')}h atrás';
                         if (index == 0) {
                           // big news
-                          List temp = item.categories != null
-                              ? item.categories!.map(
-                                  (e) {
-                                    if (!e.value.contains('Notícias') && !e.value.contains('Games')) {
-                                      return Container(
-                                        margin: const EdgeInsets.only(left: 5),
-                                        child: getTag(e.value, hasTopMargin: false),
-                                      );
-                                    } else {
-                                      return Container();
-                                    }
-                                  },
-                                ).toList()
-                              : [];
+                          List temp = buildTags(item);
 
                           List<Widget> infos = [
-                            ...temp.getRange(0, 2),
+                            // ...temp.getRange(0, 2),
+                            ...temp,
                             const Spacer(),
                             const Icon(Icons.access_time, size: 10),
                             Container(
@@ -178,7 +166,7 @@ class _NewsPageState extends State<NewsPage> {
                                   borderRadius: const BorderRadius.all(Radius.circular(25)),
                                   image: item.content != null && item.content!.images.isNotEmpty
                                       ? DecorationImage(
-                                          fit: BoxFit.fill,
+                                          fit: BoxFit.fitHeight,
                                           image: NetworkImage(item.content!.images.first),
                                         )
                                       : null,
@@ -190,9 +178,7 @@ class _NewsPageState extends State<NewsPage> {
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      const SizedBox(
-                                        height: 10,
-                                      ),
+                                      const SizedBox(height: 10),
                                       Container(
                                         padding: const EdgeInsets.only(left: 5, bottom: 5),
                                         child: Text(
@@ -205,21 +191,10 @@ class _NewsPageState extends State<NewsPage> {
                                           maxLines: 2,
                                         ),
                                       ),
-                                      Row(
-                                        children: item.categories != null
-                                            ? item.categories!.map(
-                                                (e) {
-                                                  if (!e.value.contains('Notícias') && !e.value.contains('Games')) {
-                                                    return Container(
-                                                      margin: const EdgeInsets.only(left: 5),
-                                                      child: getTag(e.value),
-                                                    );
-                                                  } else {
-                                                    return Container();
-                                                  }
-                                                },
-                                              ).toList()
-                                            : [],
+                                      Expanded(
+                                        child: Row(
+                                          children: buildTags(item),
+                                        ),
                                       ),
                                       Container(
                                         padding: const EdgeInsets.only(top: 5, left: 5),

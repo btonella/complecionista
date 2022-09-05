@@ -1,6 +1,7 @@
 import 'package:complecionista/common/routes.dart';
 import 'package:complecionista/core/api.dart';
 import 'package:complecionista/modules/feed/domain/errors.dart';
+import 'package:complecionista/modules/feed/infra/models/custom_rssfeed.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -27,7 +28,7 @@ FeedFailure getFailureError(Response? response) {
 class FeedDatasource {
   final Api _api = Modular.get<Api>();
 
-  Future<Either<FeedFailure, RssFeed>> getRSSEvent() async {
+  Future<Either<FeedFailure, CustomRssFeed>> getRSSEvent() async {
     try {
       Response? response = await _api.getApi(
         'feed',
@@ -38,14 +39,14 @@ class FeedDatasource {
         return left(failure);
       } else {
         var resp = RssFeed.parse(response.data);
-        return right(resp);
+        return right(CustomRssFeed.copy(resp));
       }
     } catch (e) {
       return left(FeedUnkownError(message: e.toString()));
     }
   }
 
-  Future<Either<FeedFailure, RssFeed>> getEspecificRSSEvent(String categorie) async {
+  Future<Either<FeedFailure, CustomRssFeed>> getEspecificRSSEvent(String categorie) async {
     try {
       Response? response = await _api.getApi(
         'feed',
@@ -56,7 +57,7 @@ class FeedDatasource {
         return left(failure);
       } else {
         var resp = RssFeed.parse(response.data);
-        return right(resp);
+        return right(CustomRssFeed.copy(resp));
       }
     } catch (e) {
       return left(FeedUnkownError(message: e.toString()));

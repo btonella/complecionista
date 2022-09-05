@@ -9,7 +9,7 @@ import 'package:complecionista/config/app_preferences.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-const DEFAULT_TIMEOUT_TIME = Duration(minutes: 1);
+const DEFAULT_TIMEOUT_TIME = Duration(seconds: 30);
 const REFRESHTOKEN_TIMEOUT_TIME = Duration(seconds: 15);
 const int DEFAULT_QTD_TRIES = 1;
 const STATUS_CODE_SUCCESS = [200, 201, 204];
