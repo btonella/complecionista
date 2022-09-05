@@ -112,10 +112,10 @@ class _NewsPageState extends State<NewsPage> {
                               decoration: BoxDecoration(
                                 color: appColors.grey(),
                                 borderRadius: const BorderRadius.all(Radius.circular(25)),
-                                image: item.content != null && item.content!.images.isNotEmpty
+                                image: item.media != null && item.media!.contents != null && item.media!.contents!.isNotEmpty
                                     ? DecorationImage(
-                                        fit: BoxFit.fill,
-                                        image: NetworkImage(item.content!.images.first),
+                                        fit: BoxFit.fitHeight,
+                                        image: NetworkImage(item.media?.contents?.first.url ?? ''),
                                       )
                                     : null,
                               ),
@@ -164,10 +164,10 @@ class _NewsPageState extends State<NewsPage> {
                                 decoration: BoxDecoration(
                                   color: appColors.grey(),
                                   borderRadius: const BorderRadius.all(Radius.circular(25)),
-                                  image: item.content != null && item.content!.images.isNotEmpty
+                                  image: item.media != null && item.media!.contents != null && item.media!.contents!.isNotEmpty
                                       ? DecorationImage(
                                           fit: BoxFit.fitHeight,
-                                          image: NetworkImage(item.content!.images.first),
+                                          image: NetworkImage(item.media?.contents?.first.url ?? ''),
                                         )
                                       : null,
                                 ),
