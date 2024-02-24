@@ -1,16 +1,24 @@
-# complecionista
+# Complecionista
 
-A new Flutter project.
+A Flutter project created to consume an gaming news website created with wordpress.
 
-## Getting Started
+## How to run the source code
 
-This project is a starting point for a Flutter application.
+1. If you don't have Flutter SDK installed, please visit official [Flutter](https://flutter.dev/) site.
+2. Fetch latest source code from master branch.
 
-A few resources to get you started if this is your first Flutter project:
+```
+git clone https://github.com/btonella/complecionista.git
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+3. Run the app with Android Studio or VS Code. Or the command line:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```
+flutter pub get
+flutter run
+```
+
+
+## Availability
+
+This source code its gonna be available for a limited time.
